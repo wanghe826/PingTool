@@ -13,6 +13,8 @@
 		59386BE81EC9A4130079C82E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59386BE61EC9A4130079C82E /* Main.storyboard */; };
 		59386BEA1EC9A4130079C82E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59386BE91EC9A4130079C82E /* Assets.xcassets */; };
 		59386BED1EC9A4130079C82E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59386BEB1EC9A4130079C82E /* LaunchScreen.storyboard */; };
+		59386BF91EC9A44E0079C82E /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 59386BF61EC9A44E0079C82E /* SimplePing.m */; };
+		59386BFA1EC9A44E0079C82E /* WHPingTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 59386BF81EC9A44E0079C82E /* WHPingTester.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		59386BE91EC9A4130079C82E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59386BEC1EC9A4130079C82E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59386BEE1EC9A4130079C82E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59386BF51EC9A44E0079C82E /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		59386BF61EC9A44E0079C82E /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		59386BF71EC9A44E0079C82E /* WHPingTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHPingTester.h; sourceTree = "<group>"; };
+		59386BF81EC9A44E0079C82E /* WHPingTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHPingTester.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		59386BDC1EC9A4130079C82E /* SimplePingDemo */ = {
 			isa = PBXGroup;
 			children = (
+				59386BF41EC9A44E0079C82E /* pingTool */,
 				59386BE01EC9A4130079C82E /* AppDelegate.h */,
 				59386BE11EC9A4130079C82E /* AppDelegate.m */,
 				59386BE31EC9A4130079C82E /* ViewController.h */,
@@ -77,6 +84,17 @@
 				59386BDE1EC9A4130079C82E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59386BF41EC9A44E0079C82E /* pingTool */ = {
+			isa = PBXGroup;
+			children = (
+				59386BF51EC9A44E0079C82E /* SimplePing.h */,
+				59386BF61EC9A44E0079C82E /* SimplePing.m */,
+				59386BF71EC9A44E0079C82E /* WHPingTester.h */,
+				59386BF81EC9A44E0079C82E /* WHPingTester.m */,
+			);
+			path = pingTool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59386BFA1EC9A44E0079C82E /* WHPingTester.m in Sources */,
 				59386BE51EC9A4130079C82E /* ViewController.m in Sources */,
 				59386BE21EC9A4130079C82E /* AppDelegate.m in Sources */,
 				59386BDF1EC9A4130079C82E /* main.m in Sources */,
+				59386BF91EC9A44E0079C82E /* SimplePing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,21 +8,45 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "WHPingTester.h"
 
+@interface ViewController ()<WHPingDelegate>
+{
+    UILabel* _pingLabel;
+}
+@property(nonatomic, strong) WHPingTester* pingTester;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    _pingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    _pingLabel.textColor = [UIColor blackColor];
+    _pingLabel.textAlignment = NSTextAlignmentCenter;
+    _pingLabel.center = self.view.center;
+    [self.view addSubview:_pingLabel];
+
+
+    //ping
+    self.pingTester = [[WHPingTester alloc] initWithHostName:@"www.baidu.com"];
+    self.pingTester.delegate = self;
+    [self.pingTester startPing];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark ping的回调
+- (void) didPingSucccessWithTime:(float)time withError:(NSError *)error
+{
+    if(error){
+        NSLog(@"网络有问题");
+    }else{
+        _pingLabel.text = [[NSString stringWithFormat:@"%d", (int)time] stringByAppendingString:@"ms"];
+    }
 }
 
 
